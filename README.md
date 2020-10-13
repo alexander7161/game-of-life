@@ -1,5 +1,6 @@
-
 # Game of Life
+
+https://alexander7161.github.io/game-of-life/
 
 > Archlet fullstack developer coding challenge.
 
