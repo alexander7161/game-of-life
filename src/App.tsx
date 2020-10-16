@@ -1,3 +1,4 @@
+import Cell from "components/Cell";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { advanceGame } from "store/game";
@@ -12,7 +13,12 @@ const App = () => {
     board.map((r) => r.map((c) => (c.status === Status.Alive ? 1 : 0)))
   );
 
-  return <div onClick={() => dispatch(advanceGame())}>advance</div>;
+  return (
+    <>
+      <div onClick={() => dispatch(advanceGame())}>advance</div>
+      <Cell />
+    </>
+  );
 };
 
 export default App;
