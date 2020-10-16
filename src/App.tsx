@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { advanceGame } from "store/game";
 import { gameBoardSelector } from "store/game/selectors";
 import { Status } from "types/game";
-import "./App.css";
 
 const App = () => {
   const dispatch = useDispatch();
