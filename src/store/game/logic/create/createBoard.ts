@@ -9,6 +9,10 @@ export const createBoard = (size = 8, status?: Status) =>
       new Array(size)
         .fill(null)
         .map((_, y) =>
-          createCell({ x, y, status: status ?? getRandomStatus() })
+          createCell({
+            x,
+            y,
+            status: status ?? getRandomStatus([Status.Alive, Status.Empty]),
+          })
         )
     );
