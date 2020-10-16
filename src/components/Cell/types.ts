@@ -1,3 +1,1 @@
-import { Cell } from "types/game";
-
-export type CellProps = { cell: Cell };
+export type CellProps = { x: number; y: number };
