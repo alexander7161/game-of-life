@@ -1,10 +1,18 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { advanceGame } from "store/game";
+import { gameBoardSelector } from "store/game/selectors";
+import { Status } from "types/game";
 import "./App.css";
 
 const App = () => {
-  const hello = useSelector<{ hello: string }, string>((state) => state.hello);
-  return <div>{hello}</div>;
+  const dispatch = useDispatch();
+  const board = useSelector(gameBoardSelector);
+  console.table(
+    board.map((r) => r.map((c) => (c.status === Status.Alive ? 1 : 0)))
+  );
+
+  return <div onClick={() => dispatch(advanceGame())}>advance</div>;
 };
 
 export default App;
