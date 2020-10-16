@@ -11,9 +11,6 @@ export const CellContainer = styled.div<{ status: Status }>`
           background-color: green;
         `;
       case Status.Dead:
-        return css`
-          background-color: red;
-        `;
       default:
         return css`
           background-color: white;
