@@ -1,4 +1,4 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 import { advanceBoard, createBoard } from "./logic";
 import { GameState } from "./types";
 
