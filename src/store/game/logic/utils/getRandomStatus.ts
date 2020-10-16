@@ -1,9 +1,7 @@
 import { Status } from "types/game";
 
-const getRandomStatus = () => {
-  const statusValues = Object.keys(Status);
-  const randomIndex = Math.floor(Math.random() * statusValues.length);
-  return randomIndex as Status;
+const getRandomStatus = (statuses: Status[]) => {
+  return statuses[Math.floor(Math.random() * statuses.length)] as Status;
 };
 
 export default getRandomStatus;

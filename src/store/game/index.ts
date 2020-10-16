@@ -3,7 +3,7 @@ import { advanceBoard, createBoard } from "./logic";
 import { GameState } from "./types";
 
 export const initialState: GameState = {
-  board: createBoard(),
+  board: createBoard(50),
   year: 0,
 };
 
