@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`timer Should start timer on StartGame 1`] = `
+Array [
+  Object {
+    "payload": undefined,
+    "type": "game/startGame",
+  },
+  Object {
+    "payload": undefined,
+    "type": "game/advanceGame",
+  },
+  Object {
+    "payload": undefined,
+    "type": "game/advanceGame",
+  },
+  Object {
+    "payload": undefined,
+    "type": "game/advanceGame",
+  },
+  Object {
+    "payload": undefined,
+    "type": "game/pauseGame",
+  },
+]
+`;
+
+exports[`timer Should stop timer on pauseGame 1`] = `
+Array [
+  Object {
+    "payload": undefined,
+    "type": "game/startGame",
+  },
+  Object {
+    "payload": undefined,
+    "type": "game/advanceGame",
+  },
+  Object {
+    "payload": undefined,
+    "type": "game/pauseGame",
+  },
+]
+`;

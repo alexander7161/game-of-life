@@ -1,13 +1,15 @@
 import Board from "components/Board";
 import React from "react";
 import { useDispatch } from "react-redux";
-import { advanceGame } from "store/game";
+import { pauseGame, startGame } from "store/game";
 
 const App = () => {
   const dispatch = useDispatch();
   return (
     <>
-      <div onClick={() => dispatch(advanceGame())}>advance</div>;
+      <div onClick={() => dispatch(startGame())}>start</div>
+      <div onClick={() => dispatch(pauseGame())}>pause</div>
+
       <Board />
     </>
   );
