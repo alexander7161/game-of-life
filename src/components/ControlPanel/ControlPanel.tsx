@@ -1,15 +1,15 @@
 import React from "react";
-import { useDispatch } from "react-redux";
-import { startGame, pauseGame } from "store/game";
+
+import GameInformation from "./GameInformation";
+import { ControlPanelContainer } from "./styles";
+import ToggleGameButton from "./ToggleGameButton";
 
 const ControlPanel = () => {
-  const dispatch = useDispatch();
-
   return (
-    <div>
-      <div onClick={() => dispatch(startGame())}>start</div>
-      <div onClick={() => dispatch(pauseGame())}>pause</div>
-    </div>
+    <ControlPanelContainer>
+      <GameInformation />
+      <ToggleGameButton />
+    </ControlPanelContainer>
   );
 };
 
