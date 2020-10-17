@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-empty-function */
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { advanceBoard, createBoard } from "./logic";
 import { GameState } from "./types";
@@ -24,7 +23,16 @@ const gameSlice = createSlice({
     pauseGame(state) {
       state.active = false;
     },
-    resetGame(state, { payload }: PayloadAction<{ size: number } | undefined>) {
+    resetGame(
+      state,
+      {
+        payload,
+      }: PayloadAction<{ size?: number; interval?: number } | undefined>
+    ) {
+      if (payload?.interval) {
+        state.interval = payload?.interval;
+      }
+
       const newSize = payload?.size ?? state.size;
       state.board = createBoard(newSize);
       state.size = newSize;
