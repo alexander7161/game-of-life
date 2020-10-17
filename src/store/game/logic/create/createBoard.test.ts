@@ -19,5 +19,7 @@ describe("createInitialBoard", () => {
   test("should create large inital board", () => {
     const board = createBoard(99, Status.Empty);
     expect(board).toMatchSnapshot();
+    expect(board.length).toBe(99);
+    expect(board[0].length).toBe(99);
   });
 });
