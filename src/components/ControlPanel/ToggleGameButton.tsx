@@ -1,6 +1,7 @@
-import { Button } from "@material-ui/core";
 import React from "react";
+import { Button } from "@material-ui/core";
 import { useDispatch, useSelector } from "react-redux";
+
 import { pauseGame, startGame } from "store/game";
 import { selectGameActive } from "store/game/selectors";
 
