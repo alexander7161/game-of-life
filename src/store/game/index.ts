@@ -1,4 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { Board } from "types/game";
 import { advanceBoard, createBoard } from "./logic";
 import { GameState } from "./types";
 
@@ -34,15 +35,17 @@ const gameSlice = createSlice({
       state,
       {
         payload,
-      }: PayloadAction<{ size?: number; interval?: number } | undefined>
+      }: PayloadAction<
+        { size?: number; interval?: number; board?: Board } | undefined
+      >
     ) {
       if (payload?.interval) {
         state.interval = payload?.interval;
       }
-
-      const newSize = payload?.size ?? state.size;
-      state.board = createBoard(newSize);
-      state.size = newSize;
+      const newBoard =
+        payload?.board ?? createBoard(payload?.size ?? state.size);
+      state.board = newBoard;
+      state.size = newBoard.length;
     },
     advanceGame(state) {
       const { board } = state;
