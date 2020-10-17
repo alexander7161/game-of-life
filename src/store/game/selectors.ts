@@ -1,6 +1,6 @@
 import { createSelector } from "@reduxjs/toolkit";
 import { AppState } from "store/store";
-import { Status } from "types/game";
+import countAlive from "./logic/utils/countAlive";
 
 export const selectGameBoard = (state: AppState) => state.game.board;
 
@@ -19,13 +19,5 @@ export const selectGameInterval = (state: AppState) => state.game.interval;
 export const selectGameYear = (state: AppState) => state.game.year;
 
 export const selectAlive = createSelector(selectGameBoard, (board) =>
-  board.reduce(
-    (total, row) =>
-      total +
-      row.reduce(
-        (totalRow, cell) => totalRow + (cell.status === Status.Alive ? 1 : 0),
-        0
-      ),
-    0
-  )
+  countAlive(board)
 );
