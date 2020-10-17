@@ -1,8 +1,8 @@
 import React, { FC } from "react";
 import { LayoutContainer } from "./styles";
 
-const Layout: FC = ({ children }) => {
-  return <LayoutContainer>{children}</LayoutContainer>;
-};
+const Layout: FC = ({ children }) => (
+  <LayoutContainer>{children}</LayoutContainer>
+);
 
 export default Layout;

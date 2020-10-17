@@ -3,14 +3,13 @@ import { call, cancel, fork, put, select, take } from "redux-saga/effects";
 import { advanceGame, startGame, pauseGame } from "..";
 import { selectGameInterval } from "../selectors";
 
-function timer(interval: number) {
-  return eventChannel((emitter) => {
+const timer = (interval: number) =>
+  eventChannel((emitter) => {
     const timerID = setInterval(() => emitter(""), interval);
     return () => {
       clearInterval(timerID);
     };
   });
-}
 
 export function* gameTimer() {
   const interval = yield select(selectGameInterval);
