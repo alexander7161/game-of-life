@@ -8,7 +8,7 @@ const sagaMiddleware = createSagaMiddleware();
 const store = configureStore({
   reducer,
   middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat(sagaMiddleware),
+    getDefaultMiddleware({ immutableCheck: false }).concat(sagaMiddleware),
   devTools: process.env.NODE_ENV !== "production",
 });
 
