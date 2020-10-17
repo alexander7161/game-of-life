@@ -2,7 +2,14 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { advanceBoard, createBoard } from "./logic";
 import { GameState } from "./types";
 
-const INITIAL_SIZE = 75;
+const getInitialSize = (length: number) => Math.round(length / 10);
+
+const INITIAL_SIZE = getInitialSize(
+  window.innerHeight > window.innerWidth
+    ? window.innerWidth
+    : window.innerHeight
+);
+
 const INITIAL_INTERVAL = 4;
 
 export const initialState: GameState = {

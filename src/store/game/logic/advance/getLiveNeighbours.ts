@@ -1,6 +1,6 @@
 import { Cell, Status, Board } from "types/game";
 
-const CONSTANTS = [
+const NEIGHBOUR_CONSTANTS = [
   [-1, -1],
   [-1, 0],
   [-1, 1],
@@ -26,7 +26,7 @@ const getNeighbourCoord = (x: number, x1: number, max: number) => {
 };
 
 export const getLiveNeighbours = ({ x, y }: Cell, board: Board): number =>
-  CONSTANTS.reduce((total, [x1, y1]) => {
+  NEIGHBOUR_CONSTANTS.reduce((total, [x1, y1]) => {
     const max = board.length;
     return (
       total +
