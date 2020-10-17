@@ -1,7 +1,9 @@
-import Cell from "components/Cell";
 import React from "react";
 import { useSelector } from "react-redux";
+
+import Cell from "components/Cell";
 import { selectGameBoardSize } from "store/game/selectors";
+
 import { BoardContainer, RowContainer } from "./styles";
 
 const Board = () => {

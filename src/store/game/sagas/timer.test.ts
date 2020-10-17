@@ -1,7 +1,9 @@
-import { advanceGame, pauseGame, startGame } from "..";
-import timerSaga from "./timer";
 import SagaTester from "redux-saga-tester";
-import GameReducer from "..";
+
+import GameReducer, { advanceGame, pauseGame, startGame } from "..";
+
+import timerSaga from "./timer";
+
 describe("timer", () => {
   it("Should start timer on StartGame", async () => {
     const sagaTester = new SagaTester({

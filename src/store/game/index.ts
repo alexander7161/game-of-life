@@ -4,13 +4,14 @@ import { advanceBoard, createBoard } from "./logic";
 import { GameState } from "./types";
 
 const INITIAL_SIZE = 75;
+const INITIAL_INTERVAL = 4;
 
 export const initialState: GameState = {
   active: false,
   board: createBoard(INITIAL_SIZE),
   year: 0,
   size: INITIAL_SIZE,
-  interval: 1,
+  interval: INITIAL_INTERVAL,
 };
 
 const gameSlice = createSlice({
